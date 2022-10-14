@@ -1,12 +1,15 @@
 import { SocialIcon } from 'react-social-icons'
 import { motion } from "framer-motion"
 import Link from 'next/link'
+import { Social } from '../typings'
 
-type Props = {}
+type Props = {
+  socials: Social[]
+}
 
-export function Header({ }: Props) {
+export function Header({ socials }: Props) {
   return (
-    <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-25 xl:itens-center'>
+    <header className='sticky top-0 p-5 flex items-start justify-between max-w-7xl mx-auto z-999 xl:itens-center'>
       <motion.div
         initial={{
           x: -500,
@@ -23,31 +26,18 @@ export function Header({ }: Props) {
         }}
         className='flex flex-row items-center'
       >
-        <SocialIcon
-          url="https://youtube.com/"
-          fgColor='var(--detailGray)'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url="https://twitter.com/"
-          fgColor='var(--detailGray)'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url="https://github.com/"
-          fgColor='var(--detailGray)'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url="https://linkedin.com/"
-          fgColor='var(--detailGray)'
-          bgColor='transparent'
-        />
-        <SocialIcon
-          url="https://facebook.com/"
-          fgColor='var(--detailYellow)'
-          bgColor='transparent'
-        />
+        {socials.map((social) => (
+          <div key={social._id} className="group-hover:bg-red-100"
+          >
+            <SocialIcon
+              url={social.url}
+              fgColor='var(--detailGray)'
+              bgColor='transparent'
+              target="_blank"
+            />
+          </div>
+        ))}
+
       </motion.div>
       <Link href="#contact">
         <motion.div
@@ -71,6 +61,7 @@ export function Header({ }: Props) {
             network='email'
             fgColor='gray'
             bgColor='transparent'
+
           />
           <p className='uppercase hidden md:inline-flex text-sm text-gray-400'>
             Get in touch
