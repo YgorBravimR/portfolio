@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
+import { Skill } from "../typings";
 import { TechSkill } from "./TechSkill";
 
-export function Skills() {
+type Props = {
+  skills: Skill[]
+}
+
+export function Skills({ skills }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -13,17 +18,12 @@ export function Skills() {
       </h3>
       <p className="absolute top-36 uppercase tracking-[4px] text-textSecondary text-sm">Hover over a skill for current proficiency</p>
       <div className="grid grid-cols-4 gap-5 ">
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
-        <TechSkill />
+        {skills.slice(0, skills.length / 2).map((skill) => (
+          <TechSkill key={skill._id} skill={skill} />
+        ))}
+        {skills.slice(skills.length / 2, skills.length).map((skill) => (
+          <TechSkill key={skill._id} skill={skill} directionLeft />
+        ))}
       </div>
     </motion.div>
   )

@@ -1,6 +1,12 @@
 import { motion } from 'framer-motion'
+import { urlFor } from '../sanity'
+import { PageInfo } from '../typings'
 
-export function About() {
+type Props = {
+  pageInfo: PageInfo
+}
+
+export function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -23,7 +29,7 @@ export function About() {
           duration: 1.2
         }}
         viewport={{ once: true }}
-        src="https://github.com/ygorbravimr.png"
+        src={urlFor(pageInfo?.profilePic).url()}
         className='mb-20 md:mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h96 xl:w-[500px] xl:h-[600px]'
       />
       <div className='space-y-10 px-0 md:px-10'>
@@ -32,7 +38,7 @@ export function About() {
           <span className='underline decoration-detailYellow'>little</span>
           {" "}background
         </p>
-        <p className='text-base'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum impedit architecto aperiam ipsum error magni temporibus eum quae, ab sint dignissimos doloribus ipsam nemo, aut minima eaque officiis delectus laudantium perspiciatis ex numquam facilis voluptatem corrupti? Omnis vitae deserunt animi nisi magnam odit nemo maiores sunt molestias tempora! Reprehenderit, maiores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati minima odit libero tempora qui repellat ipsum, beatae earum sint quidem!</p>
+        <p className='text-base'>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   )
