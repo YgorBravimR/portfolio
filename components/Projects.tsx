@@ -14,15 +14,14 @@ export function Projects({ projects }: Props) {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 2 }}
       className="h-screen relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0">
-      <h3 className="absolute top-24 uppercase tracking-[20px] text-textSecondary text-2xl">
+      <h3 className="absolute top-24 uppercase tracking-[20px] text-textSecondary text-2xl ml-5">
         Projects
       </h3 >
-
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 pt-4 sm:pt-0">
         {projects?.map((project, i) => (
           <div
             key={project._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
+            className="w-screen h-screen flex-shrink-0 snap-center flex flex-col lg:flex-row space-y-5 items-center justify-start md:justify-center p-14 pt-40"
           >
             <motion.img
               initial={{ y: -300, opacity: 0 }}
@@ -31,10 +30,11 @@ export function Projects({ projects }: Props) {
               viewport={{ once: true }}
               src={urlFor(project.image).url()}
               alt=""
+              className="h-48 sm:h-[40vh] lg:h-[55vh]"
             />
-            <div className="space-y-10 px-0 md:px-10 max-w-6xl">
-              <h4 className="text-4xl font-semibold text-center">
-                <span className="underline decoration-[#F7AB0A]/50">
+            <div className="space-y-6 sm:space-y-10 px-0 md:px-10 max-w-full sm:max-w-6xl">
+              <h4 className="text-2xl sm:text-4xl font-semibold text-center">
+                <span className="underline decoration-[#F7AB0A]/50 lg:block">
                   Case Study {i + 1} of {projects.length}:
                 </span>{" "}
                 {project?.title}
@@ -46,12 +46,12 @@ export function Projects({ projects }: Props) {
                       key={technology._id}
                       src={urlFor(technology.image).url()}
                       alt=""
-                      className='w-7 h-7 rounded-full'
+                      className='w-8 h-8 rounded-full'
                     />
                   </div>
                 ))}
               </div>
-              <p className="text-lg text-center md:text-left">
+              <p className="text-lg text-center">
                 {project.summary}
               </p>
             </div>

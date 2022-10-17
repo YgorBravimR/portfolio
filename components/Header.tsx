@@ -27,7 +27,7 @@ export function Header({ socials }: Props) {
         className='flex flex-row items-center'
       >
         {socials.map((social) => (
-          <div key={social._id} className="group-hover:bg-red-100"
+          <div key={social._id}
           >
             <SocialIcon
               url={social.url}

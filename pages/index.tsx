@@ -61,7 +61,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       <Link href="#hero">
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <ArrowUpIcon className='h-10 w-10 p-1 rounded-full filter text-textSecondary hover:text-detailYellow cursor-pointer border-[3px] border-textSecondary hover:border-detailYellow' />
+            <ArrowUpIcon className='h-8 w-8 p-1 rounded-full filter text-textSecondary hover:text-detailYellow cursor-pointer border-[2px] border-textSecondary hover:border-detailYellow' />
           </div>
         </footer>
       </Link>
