@@ -21,15 +21,15 @@ export function Hero({ pageInfo }: Props) {
         <img src={urlFor(pageInfo?.heroImage).url()} alt="" className="rounded-full" />
       </div>
       <div className='z-20'>
-        <h1 className='text-sm uppercase text-textSecondary pb-2 tracking-[12px]'>
+        <h1 className='text-sm uppercase text-textSecondary pb-2 tracking-[8px] sm:tracking-[12px]'>
           {pageInfo?.role}
         </h1>
-        <h2 className='text-5xl lg:text-6xl font-semibold px-10'>
+        <h2 className='text-3xl md:text-5xl lg:text-6xl font-semibold px-10'>
           <span className='mr-3'>{text}</span>
           <Cursor cursorColor='var(--detailYellow)' />
         </h2>
 
-        <div className='pt-5'>
+        <div className='pt-4 sm:pt-9 grid gap-4 sm:block'>
           <Link href="#about">
             <button className='heroButton'>About</button>
           </Link>
