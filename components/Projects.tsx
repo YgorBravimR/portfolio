@@ -30,7 +30,7 @@ export function Projects({ projects }: Props) {
               viewport={{ once: true }}
               src={urlFor(project.image).url()}
               alt=""
-              className="h-48 sm:h-[40vh] lg:h-[55vh]"
+              className="h-48 sm:h-[40vh] lg:h-auto lg:w-[50vw] xl:w-[30vw]"
             />
             <div className="space-y-6 sm:space-y-10 px-0 md:px-10 max-w-full sm:max-w-6xl">
               <h4 className="text-2xl sm:text-4xl font-semibold text-center">
@@ -46,7 +46,7 @@ export function Projects({ projects }: Props) {
                       key={technology._id}
                       src={urlFor(technology.image).url()}
                       alt=""
-                      className='w-8 h-8 rounded-full'
+                      className='w-8 md:w-12 h-8 md:h-12 rounded-full'
                     />
                   </div>
                 ))}

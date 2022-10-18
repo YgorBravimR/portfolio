@@ -18,7 +18,7 @@ export function Contact() {
       <h3 className="absolute top-24 uppercase tracking-[20px] text-textSecondary text-2xl ml-2">
         Contact
       </h3>
-      <div className='sm:flex sm:flex-col lg:flex-row lg:justify-between lg:items-center lg: gap-12 lg:pt-16'>
+      <div className='gap-12 sm:flex sm:flex-col lg:flex-row lg:pt-16'>
         <div className='flex flex-col items-center mb-8 sm:mb-auto'>
           <div className="flex flex-col space-y-5 sm:space-y-10 mt-16 sm:mt-0">
             <h4 className="hidden sm:block text-2xl md:text-3xl font-semibold text-center">
