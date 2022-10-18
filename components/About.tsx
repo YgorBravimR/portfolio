@@ -38,7 +38,7 @@ export function About({ pageInfo }: Props) {
           <span className='underline decoration-detailYellow'>little</span>
           {" "}background
         </p>
-        <p className='text-base h-[25vh] md:h-auto overflow-x-hidden'>{pageInfo?.backgroundInformation}</p>
+        <p className='md:text-xl text-base h-[25vh] md:h-auto overflow-x-hidden'>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   )
