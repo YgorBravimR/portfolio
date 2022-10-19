@@ -30,7 +30,7 @@ export function About({ pageInfo }: Props) {
         }}
         viewport={{ once: true }}
         src={urlFor(pageInfo?.profilePic).url()}
-        className='flex-shrink-0 w-48 h-48 mt-20 rounded-full object-cover md:mt-0 md:rounded-lg md:w-64 md:h96 xl:w-[500px] xl:h-[50vh]'
+        className='flex-shrink-0 h-48 mt-20 rounded-full object-cover md:mt-0 md:rounded-lg md:h-[50vh] lg:h-[60vh]'
       />
       <div className='space-y-8 px-0 md:px-10'>
         <p className='text-3xl font-semibold'>
@@ -38,7 +38,7 @@ export function About({ pageInfo }: Props) {
           <span className='underline decoration-detailPrimary'>little</span>
           {" "}background
         </p>
-        <p className='md:text-xl text-base h-[25vh] md:h-auto overflow-x-hidden'>{pageInfo?.backgroundInformation}</p>
+        <p className='text-base md:text-xl overflow-y-scroll max-h-[25vh] md:max-h-[45vh] overflow-x-hidden'>{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   )
