@@ -1,7 +1,6 @@
 import { motion } from "framer-motion"
-import { uuid } from "uuidv4"
-import { urlFor } from "../sanity";
-import { Project } from "../typings"
+import { urlFor } from "../@types/sanity";
+import { Project } from '../@types/typings';
 
 type Props = {
   projects: Project[];
@@ -34,7 +33,7 @@ export function Projects({ projects }: Props) {
             />
             <div className="space-y-6 sm:space-y-10 px-0 md:px-10 max-w-full sm:max-w-6xl">
               <h4 className="text-2xl sm:text-4xl font-semibold text-center">
-                <span className="underline decoration-[#F7AB0A]/50 lg:block">
+                <span className="underline decoration-detailPrimary50 lg:block">
                   Case Study {i + 1} of {projects.length}:
                 </span>{" "}
                 {project?.title}
@@ -59,7 +58,7 @@ export function Projects({ projects }: Props) {
         ))}
       </div>
 
-      <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12">
+      <div className="w-full absolute top-[30%] bg-detailPrimary10 left-0 h-[500px] -skew-y-12">
 
       </div>
     </motion.div >

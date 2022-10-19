@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Skill } from "../typings";
+import { Skill } from "../@types/typings";
 import { TechSkill } from "./TechSkill";
 
 type Props = {

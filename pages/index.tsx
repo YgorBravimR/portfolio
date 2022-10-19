@@ -9,7 +9,7 @@ import { Hero } from '../components/Hero'
 import { Projects } from '../components/Projects'
 import { Skills } from '../components/Skills'
 import { WorkExperience } from '../components/WorkExperience'
-import { Experience, PageInfo, Project, Skill, Social } from '../typings'
+import { Experience, PageInfo, Project, Skill, Social } from '../@types/typings';
 import { fetchExperience } from '../utils/fetchExperience'
 import { fetchPageInfo } from '../utils/fetchPageInfo'
 import { fetchProjects } from '../utils/fetchProjects'
@@ -42,7 +42,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
         <About pageInfo={pageInfo} />
       </section>
 
-      <section id="experience" className='snap-center'>
+      <section id="experience" className='snap-center hidden'>
         <WorkExperience experiences={experiences} />
       </section>
 
@@ -55,13 +55,13 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       </section>
 
       <section id="contact" className='snap-start'>
-        <Contact />
+        <Contact pageInfo={pageInfo} />
       </section>
 
       <Link href="#hero">
         <footer className='sticky bottom-5 w-full cursor-pointer'>
           <div className='flex items-center justify-center'>
-            <ArrowUpIcon className='h-8 w-8 p-1 rounded-full filter text-textSecondary hover:text-detailYellow cursor-pointer border-[2px] border-textSecondary hover:border-detailYellow' />
+            <ArrowUpIcon className='h-8 w-8 p-1 rounded-full filter text-textSecondary hover:text-detailPrimary cursor-pointer border-[2px] border-textSecondary hover:border-detailPrimary' />
           </div>
         </footer>
       </Link>

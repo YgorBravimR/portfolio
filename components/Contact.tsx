@@ -1,5 +1,6 @@
 import { EnvelopeIcon, MapPinIcon, PhoneIcon } from '@heroicons/react/24/solid'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { PageInfo } from '../@types/typings';
 
 type Inputs = {
   name: string,
@@ -8,11 +9,18 @@ type Inputs = {
   message: string,
 };
 
-export function Contact() {
-  const { register, handleSubmit } = useForm<Inputs>();
+type Props = {
+  pageInfo: PageInfo
+}
+
+export function Contact({ pageInfo }: Props) {
+  const { register, handleSubmit, watch } = useForm<Inputs>();
   const onSubmit: SubmitHandler<Inputs> = (formData) => (
     window.location.href = `mailto:ygorbravimr@gmail?subject=${formData.subject}&body=  Hey, my name is ${formData.name}. ${formData.message} (${formData.email})`
   );
+  const filledInputs = watch("name") && watch("email") && watch("subject") && watch("message")
+  const isSubmitDisabled = !filledInputs
+
   return (
     <div className="h-screen relative flex flex-col px-10 justify-center gap-5 sm:gap-10 items-center">
       <h3 className="absolute top-24 uppercase tracking-[20px] text-textSecondary text-2xl ml-2">
@@ -23,20 +31,20 @@ export function Contact() {
           <div className="flex flex-col space-y-5 sm:space-y-10 mt-16 sm:mt-0">
             <h4 className="hidden sm:block text-2xl md:text-3xl font-semibold text-center">
               I have got just what you need.{" "}
-              <span className="decoration-[#F7AB0A]/50 underline">Let's Talk</span>
+              <span className="decoration-detailPrimary50 underline">Let's Talk</span>
             </h4>
             <div className='space-y-2 flex flex-col items-start sm:ml-24'>
               <div className='flex items-center space-x-5 justify-start sm:justify-center'>
-                <PhoneIcon className='text-detailYellow h-5 sm:h-7 animate-pulse' />
-                <p className='text-lg sm:text-2xl'>+123456789</p>
+                <PhoneIcon className='text-detailPrimary h-5 sm:h-7 animate-pulse' />
+                <p className='text-lg sm:text-2xl'>{pageInfo?.phoneNumber}</p>
               </div>
               <div className='flex items-center space-x-5 justify-start sm:justify-center'>
-                <EnvelopeIcon className='text-detailYellow h-5 sm:h-7 animate-pulse' />
-                <p className='text-lg sm:text-2xl'>ygorbravimr@gmail.com</p>
+                <EnvelopeIcon className='text-detailPrimary h-5 sm:h-7 animate-pulse' />
+                <p className='text-lg sm:text-2xl'>{pageInfo?.email}</p>
               </div>
               <div className='flex items-center space-x-5 justify-start sm:justify-center'>
-                <MapPinIcon className='text-detailYellow h-5 sm:h-7 animate-pulse' />
-                <p className='text-lg sm:text-2xl'>123 Dev Lane</p>
+                <MapPinIcon className='text-detailPrimary h-5 sm:h-7 animate-pulse' />
+                <p className='text-lg sm:text-2xl'>{pageInfo?.address}</p>
               </div>
             </div>
           </div>
@@ -70,8 +78,9 @@ export function Contact() {
             {...register("message")}
           />
           <button
-            className='bg-detailYellow py-5 px-10 rounded-md text-detailBlack font-bold'
+            className='bg-detailPrimary py-5 px-10 rounded-md text-detailBlack font-bold disabled:bg-detailPrimary40 transition duration-300'
             type="submit"
+            disabled={isSubmitDisabled}
           >
             Submit
           </button>
