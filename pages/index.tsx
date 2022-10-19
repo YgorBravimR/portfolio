@@ -16,7 +16,7 @@ import { fetchProjects } from '../utils/fetchProjects'
 import { fetchSkills } from '../utils/fetchSkills'
 import { fetchSocials } from '../utils/fetchSocials'
 
-type Props = {
+type HomeProps = {
   pageInfo: PageInfo;
   experiences: Experience[];
   skills: Skill[];
@@ -25,7 +25,7 @@ type Props = {
 }
 
 
-const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
+const Home = ({ pageInfo, experiences, skills, projects, socials }: HomeProps) => {
   return (
     <div className='bg-background h-screen text-textPrimary snap-y snap-mandatory overflow-y-scroll overflow-x-hidden z-0'>
       <Head>
@@ -72,7 +72,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
 export default Home
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getStaticProps: GetStaticProps<HomeProps> = async () => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const experiences: Experience[] = await fetchExperience();
   const skills: Skill[] = await fetchSkills();
@@ -89,4 +89,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     },
     revalidate: 10,
   }
-} 
+}
+
