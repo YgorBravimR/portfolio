@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import { urlFor } from '../sanity'
-import { PageInfo } from '../typings'
+import { PageInfo } from '../@types/typings'
+import { urlFor } from '../@types/sanity'
 
 type Props = {
   pageInfo: PageInfo
@@ -35,7 +35,7 @@ export function About({ pageInfo }: Props) {
       <div className='space-y-8 px-0 md:px-10'>
         <p className='text-3xl font-semibold'>
           Heres a{" "}
-          <span className='underline decoration-detailYellow'>little</span>
+          <span className='underline decoration-detailPrimary'>little</span>
           {" "}background
         </p>
         <p className='md:text-xl text-base h-[25vh] md:h-auto overflow-x-hidden'>{pageInfo?.backgroundInformation}</p>

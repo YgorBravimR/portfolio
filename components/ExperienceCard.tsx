@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
-import { urlFor } from '../sanity';
-import { Experience } from '../typings';
+import { urlFor } from '../@types/sanity'
+import { Experience } from '../@types/typings';
 
 type Props = {
   experience: Experience
@@ -43,7 +43,7 @@ export function ExperienceCard({ experience }: Props) {
           </p>
         </div>
       </div>
-      <ul className='list-inside list-disc space-y-4 ml-5 text-lg overflow-y-scroll sm:max-h-80'>
+      <ul className='list-inside list-disc space-y-4 ml-5 text-lg overflow-y-scroll sm:max-h-80 marker:text-detailPrimary'>
         {experience.points.map((point, i) => (
           <li key={i}>{point}</li>
         ))}

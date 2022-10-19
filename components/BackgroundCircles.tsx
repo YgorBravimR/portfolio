@@ -19,7 +19,7 @@ export function BackgroundCircles() {
       {/* <div className='absolute border border-textSecondary h-[200px] w-[200px] rounded-full mt-52' /> */}
       <div className='absolute border border-detailDarkGray h-[300px] w-[300px] rounded-full mt-52' />
       <div className='absolute border border-detailDarkGray h-[500px] w-[500px] rounded-full mt-52' />
-      <div className='absolute border border-detailYellow h-[650px] w-[650px] rounded-full mt-52 animate-pulse' />
+      <div className='absolute border border-detailPrimary h-[650px] w-[650px] rounded-full mt-52 animate-pulse' />
       <div className='absolute border border-detailDarkGray h-[800px] w-[800px] rounded-full mt-52' />
     </motion.div>
   )

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Experience } from "../typings";
+import { Experience } from "../@types/typings";
 import { ExperienceCard } from "./ExperienceCard";
 
 type Props = {

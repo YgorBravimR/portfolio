@@ -1,8 +1,8 @@
 import { useTypewriter, Cursor } from 'react-simple-typewriter'
 import { BackgroundCircles } from './BackgroundCircles';
 import Link from 'next/link';
-import { PageInfo } from '../typings';
-import { urlFor } from '../sanity';
+import { PageInfo } from '../@types/typings';
+import { urlFor } from '../@types/sanity'
 
 type Props = {
   pageInfo: PageInfo
@@ -24,7 +24,7 @@ export function Hero({ pageInfo }: Props) {
         </h1>
         <h2 className='text-3xl md:text-5xl lg:text-6xl font-semibold px-10'>
           <span className='mr-3'>{text}</span>
-          <Cursor cursorColor='var(--detailYellow)' />
+          <Cursor cursorColor='var(--detailPrimary)' />
         </h2>
 
         <div className='pt-4 sm:pt-9 grid gap-4 sm:block'>
