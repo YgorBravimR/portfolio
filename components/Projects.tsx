@@ -22,15 +22,17 @@ export function Projects({ projects }: Props) {
             key={project._id}
             className="w-screen h-screen flex-shrink-0 snap-center flex flex-col lg:flex-row space-y-5 items-center justify-start md:justify-center p-14 pt-40"
           >
-            <motion.img
-              initial={{ y: -300, opacity: 0 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.5 }}
-              viewport={{ once: true }}
-              src={urlFor(project.image).url()}
-              alt=""
-              className="h-48 sm:h-[40vh] lg:h-auto lg:w-[50vw] xl:w-[30vw]"
-            />
+            <a href={project.linkToBuild} target="blank">
+              <motion.img
+                initial={{ y: -300, opacity: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5 }}
+                viewport={{ once: true }}
+                src={urlFor(project.image).url()}
+                alt=""
+                className="h-48 sm:h-[40vh] lg:h-auto lg:w-[50vw] xl:w-[30vw]"
+              />
+            </a>
             <div className="space-y-6 sm:space-y-10 px-0 md:px-10 max-w-full sm:max-w-6xl">
               <h4 className="text-2xl sm:text-4xl font-semibold text-center">
                 <span className="underline decoration-detailPrimary50 lg:block">
